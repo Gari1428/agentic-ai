@@ -16,9 +16,10 @@ def inventory_tool(product_name:str)->str:
     """Check inventory availability for a given product name."""
     print(f"TOOL CALLED for: {product_name}")
     inventory = {
-        "iPhone 17": "In Stock: Available Items = 2",
+        "iPhone 16": "In Stock: Available Items = 2",
         "Airpods Pro 3": "Out of Stock: Available Items = 0",
         "MacBook Air M4": "In Stock: Available Items = 5",
+        "iPhone 15":"In Stock: Available Items = 7"
     }
     return inventory.get(product_name, "Product not found in inventory.")
 
@@ -38,10 +39,10 @@ agent = create_agent(
     -  Respond with clear and concise information including:
         1. The stock status (eg. In Stock, Out of Stock)
         2. The number of items available in stock (if applicable)
-        - If the product is not found, say: "The product is not available in our inventory."
+        - If the product is not found in inventory, use "Not available" or "not found""
 
-    Never guess or hallucinate information. Do not respond unless the inventory_tool is called.
-    Keep your response short and informative.
+    Never guess or hallucinate information. Use the appropriate mentioned answers. Do not respond unless the inventory_tool is called.
+    Keep your response short and informative and in sentence form.
     """ 
 )   
 
